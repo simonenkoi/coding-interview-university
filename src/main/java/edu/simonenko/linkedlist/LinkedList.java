@@ -114,6 +114,33 @@ public class LinkedList<T> {
         first = previous;
     }
 
+    public T getKthFromEnd(int k) {
+        var a = first;
+        var b = first;
+        for (int i = 0; i < k - 1; ++i) {
+            b = b.next;
+            if (b == null) {
+                throw new IllegalArgumentException();
+            }
+        }
+        while (b != last) {
+            a = a.next;
+            b = b.next;
+        }
+        return a.value;
+
+        //        Size-bazed implementation
+        //int targetIndex = size - k;
+        //var currentIndex = 0;
+        //for (var current = first; current != null; current = current.next) {
+        //     if (currentIndex == targetIndex) {
+        //         return current.value;
+        //    }
+        //    ++currentIndex;
+        //}
+        // throw new IllegalArgumentException();
+    }
+
     private static class Node<T> {
 
         private final T value;
