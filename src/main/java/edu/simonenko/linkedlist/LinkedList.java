@@ -102,6 +102,18 @@ public class LinkedList<T> {
         return array;
     }
 
+    public void reverse() {
+        Node<T> previous = null;
+        var current = first;
+        while (current != null) {
+            var next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        first = previous;
+    }
+
     private static class Node<T> {
 
         private final T value;
