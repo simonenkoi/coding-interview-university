@@ -25,7 +25,7 @@ public class Vector<T> {
         return size;
     }
 
-    public boolean isEmtpy() {
+    public boolean isEmpty() {
         return size() == 0;
     }
 
@@ -76,7 +76,7 @@ public class Vector<T> {
     }
 
     public void pop() {
-        if (isEmtpy()) {
+        if (isEmpty()) {
             throw new IllegalArgumentException("Cannot pop element of empty vector");
         }
         if (size <= array.length / 4) {

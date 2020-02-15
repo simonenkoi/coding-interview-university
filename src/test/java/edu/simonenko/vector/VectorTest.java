@@ -15,7 +15,7 @@ class VectorTest {
     void createdVectorShouldBeEmpty() {
         Vector<Integer> vector = new Vector<>();
 
-        assertTrue(vector.isEmtpy());
+        assertTrue(vector.isEmpty());
     }
 
     @Test
@@ -58,7 +58,7 @@ class VectorTest {
 
         vector.push(1);
 
-        assertFalse(vector.isEmtpy());
+        assertFalse(vector.isEmpty());
     }
 
     @Test
@@ -181,7 +181,7 @@ class VectorTest {
         vector.push(1);
         vector.pop();
 
-        assertTrue(vector.isEmtpy());
+        assertTrue(vector.isEmpty());
     }
 
     @Test
@@ -232,7 +232,7 @@ class VectorTest {
         vector.push(1);
         vector.delete(0);
 
-        assertTrue(vector.isEmtpy());
+        assertTrue(vector.isEmpty());
     }
 
     @Test
