@@ -1,6 +1,7 @@
 package edu.simonenko.linkedlist;
 
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 public class LinkedList<T> {
 
@@ -38,7 +39,7 @@ public class LinkedList<T> {
     public int indexOf(T element) {
         int index = 0;
         for (var current = first; current != null; current = current.next) {
-            if (current.value.equals(element)) {
+            if (element.equals(current.value)) {
                 return index;
             }
             ++index;
@@ -65,6 +66,10 @@ public class LinkedList<T> {
         --size;
     }
 
+    public T first() {
+        return Optional.ofNullable(first).map(v -> v.value).orElse(null);
+    }
+
     public void removeLast() {
         if (isEmpty()) {
             throw new NoSuchElementException();
@@ -78,6 +83,10 @@ public class LinkedList<T> {
             last.next = null;
         }
         --size;
+    }
+
+    public T last() {
+        return Optional.ofNullable(last).map(v -> v.value).orElse(null);
     }
 
     private Node<T> getPrevious(Node<T> node) {
