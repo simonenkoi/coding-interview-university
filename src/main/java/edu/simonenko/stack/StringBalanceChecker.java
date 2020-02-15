@@ -8,7 +8,7 @@ public class StringBalanceChecker {
     private static final List<Character> OPEN_BRACKETS = List.of('(', '<', '{', '[');
     private static final List<Character> CLOSE_BRACKETS = List.of(')', '>', '}', ']');
 
-    public boolean isBalanced(String input) {
+    public boolean check(String input) {
         var stack = new Stack<Character>();
         for (char ch : input.toCharArray()) {
             if (isOpenBracket(ch)) {
@@ -39,11 +39,6 @@ public class StringBalanceChecker {
 
     private boolean bracketsMatch(char open, char close) {
         return OPEN_BRACKETS.indexOf(open) == CLOSE_BRACKETS.indexOf(close);
-    }
-
-    public static void main(String[] args) {
-        var stringBalanceChecker = new StringBalanceChecker();
-        System.out.println(stringBalanceChecker.isBalanced("({<2 + 3}>)"));
     }
 }
 
