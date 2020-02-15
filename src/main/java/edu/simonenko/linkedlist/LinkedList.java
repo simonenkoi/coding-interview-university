@@ -94,7 +94,7 @@ public class LinkedList<T> {
     }
 
     public T[] toArray() {
-        T[] array = (T[]) new Object[size];
+        var array = (T[]) new Object[size];
         var index = 0;
         for (var current = first; current != null; current = current.next) {
             array[index++] = current.value;
