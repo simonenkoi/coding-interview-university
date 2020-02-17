@@ -1,4 +1,4 @@
-package edu.simonenko.hashmap;
+package edu.simonenko.hashtable;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
