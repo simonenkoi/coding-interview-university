@@ -612,20 +612,20 @@ Write code on a whiteboard or paper, not a computer. Test with some sample input
     - [X] Will not implement. Implementing with array is trivial.
 
 - ### Queue
-    - [ ] [Using Queues First-In First-Out(video)](https://archive.org/details/0102WhatYouShouldKnow/05_03-usingQueuesForFirst-inFirst-out.mp4)
-    - [ ] [Queue (video)](https://www.coursera.org/lecture/data-structures/queues-EShpq)
-    - [ ] [Circular buffer/FIFO](https://en.wikipedia.org/wiki/Circular_buffer)
-    - [ ] [Priority Queues (video)](https://archive.org/details/0102WhatYouShouldKnow/05_04-priorityQueuesAndDeques.mp4)
-    - [ ] Implement using linked-list, with tail pointer:
+    - [X] [Using Queues First-In First-Out(video)](https://archive.org/details/0102WhatYouShouldKnow/05_03-usingQueuesForFirst-inFirst-out.mp4)
+    - [X] [Queue (video)](https://www.coursera.org/lecture/data-structures/queues-EShpq)
+    - [X] [Circular buffer/FIFO](https://en.wikipedia.org/wiki/Circular_buffer)
+    - [X] [Priority Queues (video)](https://archive.org/details/0102WhatYouShouldKnow/05_04-priorityQueuesAndDeques.mp4)
+    - [X] Implement using linked-list, with tail pointer:
         - enqueue(value) - adds value at position at tail
         - dequeue() - returns value and removes least recently added element (front)
         - empty()
-    - [ ] Implement using fixed-sized array:
+    - [X] Implement using fixed-sized array:
         - enqueue(value) - adds item at end of available storage
         - dequeue() - returns value and removes least recently added element
         - empty()
         - full()
-    - [ ] Cost:
+    - [X] Cost:
         - a bad implementation using linked list where you enqueue at head and dequeue at tail would be O(n)
             because you'd need the next to last element, causing a full traversal each dequeue
         - enqueue: O(1) (amortized, linked list and array [probing])
@@ -1000,24 +1000,24 @@ Graphs can be used to represent many problems in computer science, so this secti
 
 - ### Design patterns
     - [ ] [Quick UML review (video)](https://www.youtube.com/watch?v=3cmzqZzwNDM&list=PLGLfVvz_LVvQ5G-LdJ8RLqe-ndo7QITYc&index=3)
-    - [ ] Learn these patterns:
-        - [ ] strategy
-        - [ ] singleton
-        - [ ] adapter
-        - [ ] prototype
-        - [ ] decorator
-        - [ ] visitor
-        - [ ] factory, abstract factory
-        - [ ] facade
-        - [ ] observer
-        - [ ] proxy
-        - [ ] delegate
-        - [ ] command
-        - [ ] state
-        - [ ] memento
-        - [ ] iterator
-        - [ ] composite
-        - [ ] flyweight
+    - [X] Learn these patterns:
+        - [X] strategy
+        - [X] singleton
+        - [X] adapter
+        - [X] prototype
+        - [X] decorator
+        - [X] visitor
+        - [X] factory, abstract factory
+        - [X] facade
+        - [X] observer
+        - [X] proxy
+        - [X] delegate
+        - [X] command
+        - [X] state
+        - [X] memento
+        - [X] iterator
+        - [X] composite
+        - [X] flyweight
     - [ ] [Chapter 6 (Part 1) - Patterns (video)](https://youtu.be/LAP2A80Ajrg?list=PLJ9pm_Rc9HesnkwKlal_buSIHA-jTZMpO&t=3344)
     - [ ] [Chapter 6 (Part 2) - Abstraction-Occurrence, General Hierarchy, Player-Role, Singleton, Observer, Delegation (video)](https://www.youtube.com/watch?v=U8-PGsjvZc4&index=12&list=PLJ9pm_Rc9HesnkwKlal_buSIHA-jTZMpO)
     - [ ] [Chapter 6 (Part 3) - Adapter, Facade, Immutable, Read-Only Interface, Proxy (video)](https://www.youtube.com/watch?v=7sduBHuex4c&index=13&list=PLJ9pm_Rc9HesnkwKlal_buSIHA-jTZMpO)
