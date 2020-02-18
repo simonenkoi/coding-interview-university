@@ -1,5 +1,7 @@
 package edu.simonenko.tree;
 
+import java.util.Objects;
+
 public class BinaryTree<T extends Comparable<T>> {
 
     private Node<T> root;
@@ -50,10 +52,44 @@ public class BinaryTree<T extends Comparable<T>> {
         if (node == null) {
             return -1;
         }
-        if (node.left == null && node.right == null) {
+        if (isLeaf(node)) {
             return 0;
         }
         return 1 + Math.max(height(node.left), height(node.right));
+    }
+
+    private boolean isLeaf(Node<T> node) {
+        return node.left == null && node.right == null;
+    }
+
+    public T min() {
+        if (root == null) {
+            throw new IllegalStateException();
+        }
+        var current = root;
+        var last = current;
+        while (current != null) {
+            last = current;
+            current = current.left;
+        }
+        return last.value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        BinaryTree<?> that = (BinaryTree<?>) o;
+        return Objects.equals(root, that.root);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(root);
     }
 
     private static class Node<T> {
@@ -64,6 +100,25 @@ public class BinaryTree<T extends Comparable<T>> {
 
         private Node(T value) {
             this.value = value;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+            Node<?> node = (Node<?>) o;
+            return Objects.equals(value, node.value) &&
+                    Objects.equals(left, node.left) &&
+                    Objects.equals(right, node.right);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(value, left, right);
         }
     }
 

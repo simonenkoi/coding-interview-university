@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BinaryTreeTest {
@@ -72,7 +74,6 @@ class BinaryTreeTest {
         assertEquals(0, tree.height());
     }
 
-
     @Test
     void treeShouldHave2HeightWithThreeHigherElements() {
         var tree = new BinaryTree<Integer>();
@@ -82,5 +83,52 @@ class BinaryTreeTest {
         tree.insert(FIFTH_VALUE);
 
         assertEquals(2, tree.height());
+    }
+
+    @Test
+    void minOfTreeShouldBeWhenEmpty() {
+        var tree = new BinaryTree<Integer>();
+
+        assertThrows(IllegalStateException.class, tree::min);
+    }
+
+    @Test
+    void minOfTreeShouldBeSmallestElement() {
+        var tree = new BinaryTree<Integer>();
+
+        tree.insert(FIRST_VALUE);
+        tree.insert(FOURTH_VALUE);
+        tree.insert(FIFTH_VALUE);
+
+        assertEquals(FIRST_VALUE, tree.min());
+    }
+
+    @Test
+    void twoTreesShouldBeEqualWhenContentIsEqual() {
+        var firstTree = new BinaryTree<Integer>();
+        firstTree.insert(FIRST_VALUE);
+        firstTree.insert(SECOND_VALUE);
+        firstTree.insert(THIRD_VALUE);
+
+        var secondTree = new BinaryTree<Integer>();
+        secondTree.insert(FIRST_VALUE);
+        secondTree.insert(SECOND_VALUE);
+        secondTree.insert(THIRD_VALUE);
+
+        assertEquals(firstTree, secondTree);
+    }
+
+    @Test
+    void twoTreesShouldNotBeEqualWhenContentIsNotEqual() {
+        var firstTree = new BinaryTree<Integer>();
+        firstTree.insert(FIRST_VALUE);
+        firstTree.insert(SECOND_VALUE);
+        firstTree.insert(THIRD_VALUE);
+
+        var secondTree = new BinaryTree<Integer>();
+        secondTree.insert(FIRST_VALUE);
+        secondTree.insert(SECOND_VALUE);
+
+        assertNotEquals(firstTree, secondTree);
     }
 }
