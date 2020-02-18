@@ -2,6 +2,7 @@ package edu.simonenko.tree;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -55,4 +56,31 @@ class BinaryTreeTest {
         assertFalse(tree.find(FIRST_VALUE));
     }
 
+    @Test
+    void treeShouldHaveMinus1HeightWhenEmpty() {
+        var tree = new BinaryTree<Integer>();
+
+        assertEquals(-1, tree.height());
+    }
+
+    @Test
+    void treeShouldHave0HeightWithOneElement() {
+        var tree = new BinaryTree<Integer>();
+
+        tree.insert(FIRST_VALUE);
+
+        assertEquals(0, tree.height());
+    }
+
+
+    @Test
+    void treeShouldHave2HeightWithThreeHigherElements() {
+        var tree = new BinaryTree<Integer>();
+
+        tree.insert(FIRST_VALUE);
+        tree.insert(FOURTH_VALUE);
+        tree.insert(FIFTH_VALUE);
+
+        assertEquals(2, tree.height());
+    }
 }

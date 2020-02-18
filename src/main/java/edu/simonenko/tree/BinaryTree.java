@@ -42,6 +42,20 @@ public class BinaryTree<T extends Comparable<T>> {
         return false;
     }
 
+    public int height() {
+        return height(root);
+    }
+
+    private int height(Node<T> node) {
+        if (node == null) {
+            return -1;
+        }
+        if (node.left == null && node.right == null) {
+            return 0;
+        }
+        return 1 + Math.max(height(node.left), height(node.right));
+    }
+
     private static class Node<T> {
 
         private final T value;
