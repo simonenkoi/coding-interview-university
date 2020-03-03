@@ -75,6 +75,20 @@ public class BinaryTree<T extends Comparable<T>> {
         return last.value;
     }
 
+    public boolean isSearch() {
+        return isSearch(root, null, null);
+    }
+
+    private boolean isSearch(Node<T> node, T min, T max) {
+        if (node == null) {
+            return true;
+        }
+        if ((min != null && node.value.compareTo(min) < 0) || (max != null && node.value.compareTo(max) > 0)) {
+            return false;
+        }
+        return isSearch(node.left, min, root.value) && isSearch(node.right, root.value, max);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {

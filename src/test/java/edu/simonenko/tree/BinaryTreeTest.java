@@ -131,4 +131,21 @@ class BinaryTreeTest {
 
         assertNotEquals(firstTree, secondTree);
     }
+
+    @Test
+    void treeShouldBeSearchWhenValuesInserted() {
+        var tree = new BinaryTree<Integer>();
+        tree.insert(FIRST_VALUE);
+        tree.insert(SECOND_VALUE);
+        tree.insert(THIRD_VALUE);
+
+        assertTrue(tree.isSearch());
+    }
+
+    @Test
+    void treeShouldBeSearchWhenEmpty() {
+        var tree = new BinaryTree<Integer>();
+
+        assertTrue(tree.isSearch());
+    }
 }
